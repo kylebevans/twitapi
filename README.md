@@ -1,4 +1,4 @@
-# Go API client for twitclient
+# Go API client for twitapi
 
 API Reference — v2
 
@@ -24,7 +24,7 @@ go get github.com/antihax/optional
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "./twitclient"
+import "./twitapi"
 ```
 
 ## Documentation for API Endpoints
