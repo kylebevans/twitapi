@@ -1,4 +1,4 @@
-module github.com/kylebevans/twitclient
+module github.com/kylebevans/twitapi
 
 require (
 	github.com/antihax/optional v1.0.0
