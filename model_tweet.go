@@ -25,7 +25,7 @@ type Tweet struct {
 	InReplyToUserId string `json:"in_reply_to_user_id,omitempty"`
 	// Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.
 	ConversationId string `json:"conversation_id,omitempty"`
-	ConversationControl ConversationControl `json:"conversation_control,omitempty"`
+//not implemented yet	ConversationControl ConversationControl `json:"conversation_control,omitempty"`
 	// A list of Tweets this Tweet refers to. For example, if the parent Tweet is a Retweet, a Quoted Tweet or a Reply, it will include the related Tweet referenced to by its parent.
 	ReferencedTweets []TweetReferencedTweets `json:"referenced_tweets,omitempty"`
 	Attachments TweetAttachments `json:"attachments,omitempty"`

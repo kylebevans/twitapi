@@ -28,9 +28,9 @@ var (
 type TweetsApiService service
 
 // AddOrDeleteRulesOpts Optional parameters for the method 'AddOrDeleteRules'
-type AddOrDeleteRulesOpts struct {
-    DryRun optional.Bool
-}
+//type AddOrDeleteRulesOpts struct {
+//    DryRun optional.Bool
+//}
 
 /*
 AddOrDeleteRules Add or delete rules from a user's active rule set.
@@ -368,9 +368,9 @@ func (a *TweetsApiService) FindTweetsById(ctx _context.Context, ids []string, lo
 }
 
 // GetRulesOpts Optional parameters for the method 'GetRules'
-type GetRulesOpts struct {
-    Ids optional.Interface
-}
+//type GetRulesOpts struct {
+//    Ids optional.Interface
+//}
 
 /*
 GetRules Returns rules from a user's active rule set.
@@ -803,20 +803,20 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 }
 
 // TweetsFullarchiveSearchOpts Optional parameters for the method 'TweetsFullarchiveSearch'
-type TweetsFullarchiveSearchOpts struct {
-    StartTime optional.Time
-    EndTime optional.Time
-    SinceId optional.String
-    UntilId optional.String
-    MaxResults optional.Int32
-    NextToken optional.String
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
-}
+//type TweetsFullarchiveSearchOpts struct {
+//    StartTime optional.Time
+//    EndTime optional.Time
+//    SinceId optional.String
+//    UntilId optional.String
+//    MaxResults optional.Int32
+//    NextToken optional.String
+//    Expansions optional.Interface
+//    TweetFields optional.Interface
+//    UserFields optional.Interface
+//    MediaFields optional.Interface
+//    PlaceFields optional.Interface
+//    PollFields optional.Interface
+//}
 
 /*
 TweetsFullarchiveSearch Returns Tweets that match a search query.
@@ -958,20 +958,20 @@ func (a *TweetsApiService) TweetsFullarchiveSearch(ctx _context.Context, query s
 }
 
 // TweetsRecentSearchOpts Optional parameters for the method 'TweetsRecentSearch'
-type TweetsRecentSearchOpts struct {
-    StartTime optional.Time
-    EndTime optional.Time
-    SinceId optional.String
-    UntilId optional.String
-    MaxResults optional.Int32
-    NextToken optional.String
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
-}
+//type TweetsRecentSearchOpts struct {
+//    StartTime optional.Time
+//    EndTime optional.Time
+//    SinceId optional.String
+//    UntilId optional.String
+//    MaxResults optional.Int32
+//    NextToken optional.String
+//    Expansions optional.Interface
+//    TweetFields optional.Interface
+//    UserFields optional.Interface
+//    MediaFields optional.Interface
+//    PlaceFields optional.Interface
+//    PollFields optional.Interface
+//}
 
 /*
 TweetsRecentSearch Returns Tweets from the last 7 days that match a search query.
