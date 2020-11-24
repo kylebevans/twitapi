@@ -33,7 +33,6 @@ Optional parameters are passed through a pointer to a TweetsFullarchiveSearchOpt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **startTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute). | 
  **endTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute). | 
  **sinceId** | **optional.String**| Returns results with a Tweet ID greater than (that is, more recent than) the specified ID. | 
