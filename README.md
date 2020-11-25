@@ -29,7 +29,7 @@ func main() {
 	var err error
 
 	// API is paginated, so print pages of recent tweets in the last week
-	// that mention "sandwich" until they are all done
+	// that mention "tasty sandwich" until they are all done
 	for ok := true; ok; ok = (tweets.Meta.NextToken != "") {
 
 		tweets, _, err = apiClient.SearchApi.TweetsRecentSearch(ctx, "\"tasty sandwich\"", searchOpts)
