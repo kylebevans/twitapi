@@ -33,7 +33,6 @@ Optional parameters are passed through a pointer to a AddOrDeleteRulesOpts struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **dryRun** | **optional.Bool**| Dry Run can be used with both the add and delete action, with the expected result given, but without actually taking any action in the system (meaning the end state will always be as it was when the request was submitted). This is particularly useful to validate rule changes. | 
 
 ### Return type

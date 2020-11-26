@@ -40,7 +40,6 @@ Optional parameters are passed through a pointer to a AddOrDeleteRulesOpts struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **dryRun** | **optional.Bool**| Dry Run can be used with both the add and delete action, with the expected result given, but without actually taking any action in the system (meaning the end state will always be as it was when the request was submitted). This is particularly useful to validate rule changes. | 
 
 ### Return type
@@ -85,7 +84,6 @@ Optional parameters are passed through a pointer to a FindTweetByIdOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
@@ -135,7 +133,6 @@ Optional parameters are passed through a pointer to a FindTweetsByIdOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
@@ -228,7 +225,6 @@ Optional parameters are passed through a pointer to a HideReplyByIdOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **inlineObject** | [**optional.Interface of InlineObject**](InlineObject.md)|  | 
 
 ### Return type
@@ -369,7 +365,6 @@ Optional parameters are passed through a pointer to a TweetsFullarchiveSearchOpt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **startTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute). | 
  **endTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute). | 
  **sinceId** | **optional.String**| Returns results with a Tweet ID greater than (that is, more recent than) the specified ID. | 
@@ -425,7 +420,6 @@ Optional parameters are passed through a pointer to a TweetsRecentSearchOpts str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **startTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute). | 
  **endTime** | **optional.Time**| YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute). | 
  **sinceId** | **optional.String**| Returns results with a Tweet ID greater than (that is, more recent than) the specified ID. | 

@@ -35,7 +35,6 @@ Optional parameters are passed through a pointer to a FindUserByIdOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
@@ -82,7 +81,6 @@ Optional parameters are passed through a pointer to a FindUserByUsernameOpts str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
@@ -129,7 +127,6 @@ Optional parameters are passed through a pointer to a FindUsersByIdOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
@@ -176,7 +173,6 @@ Optional parameters are passed through a pointer to a FindUsersByUsernameOpts st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **expansions** | [**optional.Interface of []string**](string.md)| A comma separated list of fields to expand. | 
  **tweetFields** | [**optional.Interface of []string**](string.md)| A comma separated list of Tweet fields to display. | 
  **userFields** | [**optional.Interface of []string**](string.md)| A comma separated list of User fields to display. | 
