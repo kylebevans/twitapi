@@ -710,7 +710,7 @@ Streams tweets matching a user&#39;s active rule set.
  * @param "PollFields" (optional.Interface of []string) -  A comma separated list of Poll fields to display.
 @return FilteredStreamingTweet
 */
-func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals *SearchStreamOpts, tweets chan FilteredStreamingTweet) (*_nethttp.Response, error) {
+func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals *SearchStreamOpts, tweets chan FilteredStreamingTweet, errs chan error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -763,12 +763,12 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return nil, err
+		errs <- err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		errs <- err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -781,10 +781,10 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
+			errs <- newErr
 		}
 		newErr.model = v
-		return localVarHTTPResponse, newErr
+		errs <- newErr
 	}
 
 	dec := json.NewDecoder(localVarHTTPResponse.Body)
@@ -798,10 +798,8 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 
 	localVarHTTPResponse.Body.Close()
 	if err != nil {
-		return localVarHTTPResponse, err
+		errs <- err
 	}
-
-	return localVarHTTPResponse, nil
 }
 
 // TweetsFullarchiveSearchOpts Optional parameters for the method 'TweetsFullarchiveSearch'
