@@ -12,7 +12,6 @@ package twitapi
 import (
 	_context "context"
 	"encoding/json"
-	"fmt"
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
@@ -790,7 +789,6 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 
 	dec := json.NewDecoder(localVarHTTPResponse.Body)
 	for {
-		fmt.Println("there")
 		err = dec.Decode(&localVarReturnValue)
 		if err != nil {
 			break
