@@ -795,6 +795,7 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 		if err != nil {
 			break
 		}
+		errs <- err
 		tweets <- localVarReturnValue
 	}
 
