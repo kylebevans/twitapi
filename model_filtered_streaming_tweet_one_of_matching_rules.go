@@ -11,7 +11,7 @@ package twitapi
 // FilteredStreamingTweetOneOfMatchingRules struct for FilteredStreamingTweetOneOfMatchingRules
 type FilteredStreamingTweetOneOfMatchingRules struct {
 	// Unique identifier of this rule.
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	// The user-supplied tag assigned to the rule which matched
 	Tag string `json:"tag,omitempty"`
 }
