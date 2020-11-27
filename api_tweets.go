@@ -11,12 +11,14 @@ package twitapi
 
 import (
 	_context "context"
+	"encoding/json"
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"strings"
-	"github.com/antihax/optional"
 	"reflect"
+	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -100,13 +102,13 @@ func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRul
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -124,12 +126,12 @@ func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRul
 
 // FindTweetByIdOpts Optional parameters for the method 'FindTweetById'
 type FindTweetByIdOpts struct {
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
+	Expansions  optional.Interface
+	TweetFields optional.Interface
+	UserFields  optional.Interface
+	MediaFields optional.Interface
+	PlaceFields optional.Interface
+	PollFields  optional.Interface
 }
 
 /*
@@ -158,7 +160,7 @@ func (a *TweetsApiService) FindTweetById(ctx _context.Context, id string, localV
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/2/tweets/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -220,13 +222,13 @@ func (a *TweetsApiService) FindTweetById(ctx _context.Context, id string, localV
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -244,12 +246,12 @@ func (a *TweetsApiService) FindTweetById(ctx _context.Context, id string, localV
 
 // FindTweetsByIdOpts Optional parameters for the method 'FindTweetsById'
 type FindTweetsByIdOpts struct {
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
+	Expansions  optional.Interface
+	TweetFields optional.Interface
+	UserFields  optional.Interface
+	MediaFields optional.Interface
+	PlaceFields optional.Interface
+	PollFields  optional.Interface
 }
 
 /*
@@ -345,13 +347,13 @@ func (a *TweetsApiService) FindTweetsById(ctx _context.Context, ids []string, lo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -397,7 +399,7 @@ func (a *TweetsApiService) GetRules(ctx _context.Context, localVarOptionals *Get
 	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Ids.IsSet() {
-		t:=localVarOptionals.Ids.Value()
+		t := localVarOptionals.Ids.Value()
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
@@ -445,13 +447,13 @@ func (a *TweetsApiService) GetRules(ctx _context.Context, localVarOptionals *Get
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -469,7 +471,7 @@ func (a *TweetsApiService) GetRules(ctx _context.Context, localVarOptionals *Get
 
 // HideReplyByIdOpts Optional parameters for the method 'HideReplyById'
 type HideReplyByIdOpts struct {
-    InlineObject optional.Interface
+	InlineObject optional.Interface
 }
 
 /*
@@ -478,7 +480,7 @@ Tweet ID in the path is that of the reply to hide or unhide.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The ID of the reply that you want to hide or unhide.
  * @param optional nil or *HideReplyByIdOpts - Optional Parameters:
- * @param "InlineObject" (optional.Interface of InlineObject) - 
+ * @param "InlineObject" (optional.Interface of InlineObject) -
 @return InlineResponse200
 */
 func (a *TweetsApiService) HideReplyById(ctx _context.Context, id string, localVarOptionals *HideReplyByIdOpts) (InlineResponse200, *_nethttp.Response, error) {
@@ -493,7 +495,7 @@ func (a *TweetsApiService) HideReplyById(ctx _context.Context, id string, localV
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/2/tweets/{id}/hidden"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -546,13 +548,13 @@ func (a *TweetsApiService) HideReplyById(ctx _context.Context, id string, localV
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -570,12 +572,12 @@ func (a *TweetsApiService) HideReplyById(ctx _context.Context, id string, localV
 
 // SampleStreamOpts Optional parameters for the method 'SampleStream'
 type SampleStreamOpts struct {
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
+	Expansions  optional.Interface
+	TweetFields optional.Interface
+	UserFields  optional.Interface
+	MediaFields optional.Interface
+	PlaceFields optional.Interface
+	PollFields  optional.Interface
 }
 
 /*
@@ -663,13 +665,13 @@ func (a *TweetsApiService) SampleStream(ctx _context.Context, localVarOptionals 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -687,12 +689,12 @@ func (a *TweetsApiService) SampleStream(ctx _context.Context, localVarOptionals 
 
 // SearchStreamOpts Optional parameters for the method 'SearchStream'
 type SearchStreamOpts struct {
-    Expansions optional.Interface
-    TweetFields optional.Interface
-    UserFields optional.Interface
-    MediaFields optional.Interface
-    PlaceFields optional.Interface
-    PollFields optional.Interface
+	Expansions  optional.Interface
+	TweetFields optional.Interface
+	UserFields  optional.Interface
+	MediaFields optional.Interface
+	PlaceFields optional.Interface
+	PollFields  optional.Interface
 }
 
 /*
@@ -708,7 +710,7 @@ Streams tweets matching a user&#39;s active rule set.
  * @param "PollFields" (optional.Interface of []string) -  A comma separated list of Poll fields to display.
 @return FilteredStreamingTweet
 */
-func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals *SearchStreamOpts) (FilteredStreamingTweet, *_nethttp.Response, error) {
+func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals *SearchStreamOpts, tweets chan FilteredStreamingTweet) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -761,45 +763,45 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
 		newErr := GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
 		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
+		newErr.model = v
+		return localVarHTTPResponse, newErr
 	}
 
-	return localVarReturnValue, localVarHTTPResponse, nil
+	dec := json.NewDecoder(localVarHTTPResponse.Body)
+	for {
+		err = dec.Decode(&localVarReturnValue)
+		if err != nil {
+			break
+		}
+		tweets <- localVarReturnValue
+	}
+
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 // TweetsFullarchiveSearchOpts Optional parameters for the method 'TweetsFullarchiveSearch'
@@ -935,13 +937,13 @@ func (a *TweetsApiService) TweetsFullarchiveSearch(ctx _context.Context, query s
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1090,13 +1092,13 @@ func (a *TweetsApiService) TweetsRecentSearch(ctx _context.Context, query string
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
