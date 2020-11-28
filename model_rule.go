@@ -15,5 +15,5 @@ type Rule struct {
 	// A tag meant for the labeling of user provided rules.
 	Tag string `json:"tag,omitempty"`
 	// Unique identifier of this rule.
-	Id string `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
 }
