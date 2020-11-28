@@ -11,5 +11,5 @@ package twitapi
 
 // DeleteRulesRequest struct for DeleteRulesRequest
 type DeleteRulesRequest struct {
-	Delete []RuleDeleteIds `json:"delete"`
+	Delete RuleDeleteIds `json:"delete"`
 }
