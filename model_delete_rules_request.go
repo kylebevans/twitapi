@@ -10,6 +10,6 @@
 package twitapi
 // DeleteRulesRequest struct for DeleteRulesRequest
 type DeleteRulesRequest struct {
-	Ids []string `json:"ids,omitempty"`
+	Ids []int64 `json:"ids,omitempty"`
 	Values []string `json:"values,omitempty"`
 }
