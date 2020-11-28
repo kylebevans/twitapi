@@ -12,6 +12,7 @@ package twitapi
 import (
 	_context "context"
 	"encoding/json"
+	"errors"
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
@@ -43,7 +44,7 @@ Add or delete rules from a user&#39;s active rule set. Users can provide unique,
  * @param "DryRun" (optional.Bool) -  Dry Run can be used with both the add and delete action, with the expected result given, but without actually taking any action in the system (meaning the end state will always be as it was when the request was submitted). This is particularly useful to validate rule changes.
 @return AddOrDeleteRulesResponse
 */
-func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRulesRequest AddOrDeleteRulesRequest, localVarOptionals *AddOrDeleteRulesOpts) (AddOrDeleteRulesResponse, *_nethttp.Response, error) {
+func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRulesRequest interface{}, localVarOptionals *AddOrDeleteRulesOpts) (AddOrDeleteRulesResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -52,6 +53,15 @@ func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRul
 		localVarFileBytes    []byte
 		localVarReturnValue  AddOrDeleteRulesResponse
 	)
+
+	switch addOrDeleteRulesRequest.(type) {
+	case AddRulesRequest:
+		break
+	case DeleteRulesRequest:
+		break
+	default:
+		return localVarReturnValue, nil, errors.New("addOrDeleteRulesRequest must of of type AddRulesRequest or DeleteRulesRequest")
+	}
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/2/tweets/search/stream/rules"
