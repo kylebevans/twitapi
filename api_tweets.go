@@ -13,7 +13,6 @@ import (
 	_context "context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
@@ -96,7 +95,6 @@ func (a *TweetsApiService) AddOrDeleteRules(ctx _context.Context, addOrDeleteRul
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
-	fmt.Println(r.Body)
 	localVarHTTPResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
