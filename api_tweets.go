@@ -773,11 +773,13 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		errs <- err
+		return
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHTTPResponse == nil {
 		errs <- err
+		return
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -791,6 +793,7 @@ func (a *TweetsApiService) SearchStream(ctx _context.Context, localVarOptionals 
 		if err != nil {
 			newErr.error = err.Error()
 			errs <- newErr
+			return
 		}
 		newErr.model = v
 		errs <- newErr
